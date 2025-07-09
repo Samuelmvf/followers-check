@@ -10,7 +10,6 @@ export const AppRoutes = {
   FORGOT_PASSWORD: "/forgot-password",
   TERMS: "/terms",
   PRIVACY: "/privacy",
-  SIGNIN: "/signin", // Alternative signin route found in SignUpPage
 } as const;
 
 export type RouteValues = (typeof AppRoutes)[keyof typeof AppRoutes];

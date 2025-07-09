@@ -42,7 +42,8 @@ const Header = () => {
               </Link>
             )}
             <Button
-              variant='transparent'
+              variant='secondary'
+              flat
               className='md:hidden p-2'
               aria-label='Open navigation menu'
               aria-expanded='false'

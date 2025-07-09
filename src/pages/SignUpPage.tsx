@@ -167,7 +167,7 @@ const SignUpPage = () => {
             <div className='mt-8 text-center'>
               <p className='text-gray-600'>
                 Already have an account?{" "}
-                <Link to={AppRoutes.SIGNIN} className='text-purple-600 hover:text-purple-500 font-medium transition-colors'>
+                <Link to={AppRoutes.SIGN_IN} className='text-purple-600 hover:text-purple-500 font-medium transition-colors'>
                   Sign in here
                 </Link>
               </p>

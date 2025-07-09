@@ -57,7 +57,7 @@ const Analysis = () => {
         <div className='bg-white rounded-3xl shadow-2xl p-8 border border-gray-100 mb-8'>
           <div className='flex items-center justify-between mb-6'>
             <h2 className='text-2xl font-semibold text-gray-900'>Data Upload</h2>
-            <Button variant='transparent' onClick={() => setShowHelpModal(true)} className='flex items-center space-x-2 text-sm'>
+            <Button variant='primary' flat onClick={() => setShowHelpModal(true)} className='flex items-center space-x-2 text-sm'>
               <HelpCircle className='w-5 h-5' />
               <span className='font-medium'>How to get the data?</span>
             </Button>

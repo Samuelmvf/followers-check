@@ -1,15 +1,25 @@
 import { type ButtonHTMLAttributes, type ReactNode } from "react";
 
-export type ButtonVariant = "primary" | "secondary" | "confirm" | "warning" | "error" | "transparent";
+export type ButtonVariant = "primary" | "secondary" | "confirm" | "warning" | "error";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
   children: ReactNode;
   isLoading?: boolean;
+  flat?: boolean;
 }
 
-const Button = ({ variant = "primary", children, isLoading = false, className = "", style = {}, disabled, ...props }: ButtonProps) => {
-  const getVariantStyles = (variant: ButtonVariant) => {
+const Button = ({
+  variant = "primary",
+  children,
+  isLoading = false,
+  flat = false,
+  className = "",
+  style = {},
+  disabled,
+  ...props
+}: ButtonProps) => {
+  const getVariantStyles = (variant: ButtonVariant, flat: boolean) => {
     const baseStyles = {
       padding: "12px 24px",
       border: "none",
@@ -25,52 +35,11 @@ const Button = ({ variant = "primary", children, isLoading = false, className = 
       opacity: disabled || isLoading ? 0.6 : 1,
     };
 
-    switch (variant) {
-      case "primary":
+    const getColors = (bgGradient: string, textColor: string, shadowColor: string) => {
+      if (flat) {
         return {
-          ...baseStyles,
-          background: "linear-gradient(to right, #8b5cf6, #ec4899)",
-          color: "white",
-          boxShadow: "0 4px 14px 0 rgba(139, 92, 246, 0.3)",
-        };
-
-      case "secondary":
-        return {
-          ...baseStyles,
-          background: "linear-gradient(to right, #6b7280, #9ca3af)",
-          color: "white",
-          boxShadow: "0 4px 14px 0 rgba(107, 114, 128, 0.3)",
-        };
-
-      case "confirm":
-        return {
-          ...baseStyles,
-          background: "linear-gradient(to right, #10b981, #059669)",
-          color: "white",
-          boxShadow: "0 4px 14px 0 rgba(16, 185, 129, 0.3)",
-        };
-
-      case "warning":
-        return {
-          ...baseStyles,
-          background: "linear-gradient(to right, #f59e0b, #d97706)",
-          color: "white",
-          boxShadow: "0 4px 14px 0 rgba(245, 158, 11, 0.3)",
-        };
-
-      case "error":
-        return {
-          ...baseStyles,
-          background: "linear-gradient(to right, #ef4444, #dc2626)",
-          color: "white",
-          boxShadow: "0 4px 14px 0 rgba(239, 68, 68, 0.3)",
-        };
-
-      case "transparent":
-        return {
-          ...baseStyles,
           background: "transparent",
-          backgroundImage: "linear-gradient(to right, #8b5cf6, #ec4899)",
+          backgroundImage: bgGradient,
           backgroundClip: "text",
           WebkitBackgroundClip: "text",
           color: "transparent",
@@ -78,38 +47,85 @@ const Button = ({ variant = "primary", children, isLoading = false, className = 
           backgroundOrigin: "border-box",
           boxShadow: "none",
         };
+      } else {
+        return {
+          background: bgGradient,
+          color: textColor,
+          boxShadow: shadowColor,
+        };
+      }
+    };
+
+    switch (variant) {
+      case "primary":
+        return {
+          ...baseStyles,
+          ...getColors("linear-gradient(to right, #8b5cf6, #ec4899)", "white", "0 4px 14px 0 rgba(139, 92, 246, 0.3)"),
+        };
+
+      case "secondary":
+        return {
+          ...baseStyles,
+          ...getColors("linear-gradient(to right, #6b7280, #9ca3af)", "white", "0 4px 14px 0 rgba(107, 114, 128, 0.3)"),
+        };
+
+      case "confirm":
+        return {
+          ...baseStyles,
+          ...getColors("linear-gradient(to right, #10b981, #059669)", "white", "0 4px 14px 0 rgba(16, 185, 129, 0.3)"),
+        };
+
+      case "warning":
+        return {
+          ...baseStyles,
+          ...getColors("linear-gradient(to right, #f59e0b, #d97706)", "white", "0 4px 14px 0 rgba(245, 158, 11, 0.3)"),
+        };
+
+      case "error":
+        return {
+          ...baseStyles,
+          ...getColors("linear-gradient(to right, #ef4444, #dc2626)", "white", "0 4px 14px 0 rgba(239, 68, 68, 0.3)"),
+        };
 
       default:
         return baseStyles;
     }
   };
 
-  const getHoverStyles = (variant: ButtonVariant) => {
+  const getHoverStyles = (variant: ButtonVariant, flat: boolean) => {
     if (disabled || isLoading) return {};
+
+    const getHoverColors = (bgGradient: string) => {
+      if (flat) {
+        return {
+          backgroundImage: bgGradient,
+          backgroundColor: "rgba(139, 92, 246, 0.1)",
+        };
+      } else {
+        return {
+          background: bgGradient,
+        };
+      }
+    };
 
     switch (variant) {
       case "primary":
-        return { background: "linear-gradient(to right, #7c3aed, #db2777)" };
+        return getHoverColors("linear-gradient(to right, #7c3aed, #db2777)");
       case "secondary":
-        return { background: "linear-gradient(to right, #4b5563, #6b7280)" };
+        return getHoverColors("linear-gradient(to right, #4b5563, #6b7280)");
       case "confirm":
-        return { background: "linear-gradient(to right, #059669, #047857)" };
+        return getHoverColors("linear-gradient(to right, #059669, #047857)");
       case "warning":
-        return { background: "linear-gradient(to right, #d97706, #b45309)" };
+        return getHoverColors("linear-gradient(to right, #d97706, #b45309)");
       case "error":
-        return { background: "linear-gradient(to right, #dc2626, #b91c1c)" };
-      case "transparent":
-        return {
-          backgroundImage: "linear-gradient(to right, #7c3aed, #db2777)",
-          backgroundColor: "rgba(139, 92, 246, 0.1)",
-        };
+        return getHoverColors("linear-gradient(to right, #dc2626, #b91c1c)");
       default:
         return {};
     }
   };
 
   const combinedStyles = {
-    ...getVariantStyles(variant),
+    ...getVariantStyles(variant, flat),
     ...style,
   };
 
@@ -121,7 +137,6 @@ const Button = ({ variant = "primary", children, isLoading = false, className = 
     ${variant === "confirm" ? "focus:ring-green-300" : ""}
     ${variant === "warning" ? "focus:ring-yellow-300" : ""}
     ${variant === "error" ? "focus:ring-red-300" : ""}
-    ${variant === "transparent" ? "focus:ring-purple-300" : ""}
     ${disabled || isLoading ? "transform-none" : ""}
     ${className}
   `
@@ -136,12 +151,12 @@ const Button = ({ variant = "primary", children, isLoading = false, className = 
       style={combinedStyles}
       onMouseEnter={(e) => {
         if (!disabled && !isLoading) {
-          Object.assign(e.currentTarget.style, getHoverStyles(variant));
+          Object.assign(e.currentTarget.style, getHoverStyles(variant, flat));
         }
       }}
       onMouseLeave={(e) => {
         if (!disabled && !isLoading) {
-          Object.assign(e.currentTarget.style, getVariantStyles(variant));
+          Object.assign(e.currentTarget.style, getVariantStyles(variant, flat));
         }
       }}
     >

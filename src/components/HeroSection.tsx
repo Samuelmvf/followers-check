@@ -1,7 +1,8 @@
-import { ArrowRight, CheckCircle, Instagram, Shield, Upload, Users, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle, Instagram, Shield, Users, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AppRoutes } from "../enums/routes";
 import Button from "./Button";
+import FollowerItem from "./FollowerItem";
 
 const HeroSection = () => {
   return (
@@ -44,7 +45,7 @@ const HeroSection = () => {
                 Start Free Analysis
                 <ArrowRight className='w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform' aria-hidden='true' />
               </Link>
-              <Button variant='transparent' className='text-lg px-8 py-4' aria-label='Watch tool demonstration'>
+              <Button variant='primary' flat className='text-lg px-8 py-4' aria-label='Watch tool demonstration'>
                 Watch Demo
               </Button>
             </div>
@@ -74,23 +75,6 @@ const HeroSection = () => {
                   <h3 id='demo-heading' className='text-lg font-semibold text-gray-900'>
                     Follower Analysis
                   </h3>
-                  <div className='flex items-center space-x-2' aria-label='Upload type'>
-                    <Upload className='w-4 h-4 text-green-500' aria-hidden='true' />
-                    <span className='text-sm text-gray-500'>JSON Upload</span>
-                  </div>
-                </div>
-
-                <div className='bg-gradient-to-r from-red-50 to-red-100 p-6 rounded-xl' role='region' aria-labelledby='unfollowers-heading'>
-                  <div className='flex items-center space-x-3 mb-3'>
-                    <Users className='w-6 h-6 text-red-600' aria-hidden='true' />
-                    <h4 id='unfollowers-heading' className='text-lg font-semibold text-red-800'>
-                      Don't follow you back
-                    </h4>
-                  </div>
-                  <div className='text-3xl font-bold text-red-900 mb-2' aria-label='247 people do not follow back'>
-                    247
-                  </div>
-                  <div className='text-sm text-red-600'>65% of your followers</div>
                 </div>
 
                 <div className='grid grid-cols-2 gap-4'>
@@ -104,28 +88,27 @@ const HeroSection = () => {
                   </div>
                 </div>
 
+                <div
+                  className='bg-gradient-to-r from-yellow-50 to-yellow-100 p-6 rounded-xl'
+                  role='region'
+                  aria-labelledby='unfollowers-heading'
+                >
+                  <div className='flex items-center space-x-3 mb-3'>
+                    <Users className='w-6 h-6 text-yellow-500' aria-hidden='true' />
+                    <h4 id='unfollowers-heading' className='text-lg font-semibold text-yellow-800'>
+                      Don't follow you back
+                    </h4>
+                  </div>
+                  <div className='text-3xl font-bold text-yellow-900 mb-2' aria-label='247 people do not follow back'>
+                    247
+                  </div>
+                  <div className='text-sm text-yellow-600'>28% of your followers</div>
+                </div>
+
                 <div className='space-y-3'>
-                  <div className='flex items-center justify-between p-3 bg-gray-50 rounded-lg'>
-                    <div className='flex items-center space-x-3'>
-                      <div className='w-8 h-8 bg-red-500 rounded-full'></div>
-                      <span className='text-sm font-medium'>@inactive_user</span>
-                    </div>
-                    <span className='text-xs text-gray-500'>2 years ago</span>
-                  </div>
-                  <div className='flex items-center justify-between p-3 bg-gray-50 rounded-lg'>
-                    <div className='flex items-center space-x-3'>
-                      <div className='w-8 h-8 bg-purple-500 rounded-full'></div>
-                      <span className='text-sm font-medium'>@old_follow</span>
-                    </div>
-                    <span className='text-xs text-gray-500'>1 year ago</span>
-                  </div>
-                  <div className='flex items-center justify-between p-3 bg-gray-50 rounded-lg'>
-                    <div className='flex items-center space-x-3'>
-                      <div className='w-8 h-8 bg-blue-500 rounded-full'></div>
-                      <span className='text-sm font-medium'>@distant_profile</span>
-                    </div>
-                    <span className='text-xs text-gray-500'>8 months ago</span>
-                  </div>
+                  <FollowerItem username='@jessica_oliveira' timeFollowing='Seguindo há 3 anos' status='Não segue' variant='red' />
+                  <FollowerItem username='@marcos_travels' timeFollowing='Seguindo há 1 ano' status='Não segue' variant='red' />
+                  <FollowerItem username='@ana.tech' timeFollowing='Seguindo há 8 meses' status='Não segue' variant='red' />
                 </div>
               </div>
             </div>
