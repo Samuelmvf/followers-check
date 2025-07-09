@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle, Instagram, Shield, Upload, Users, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { AppRoutes } from "../enums/routes";
 import Button from "./Button";
 
 const HeroSection = () => {
@@ -36,7 +37,7 @@ const HeroSection = () => {
 
             <div className='flex flex-col sm:flex-row gap-4'>
               <Link
-                to='/analyze'
+                to={AppRoutes.ANALYZE}
                 className='bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2'
                 aria-label='Start free follower analysis'
               >

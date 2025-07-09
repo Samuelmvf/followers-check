@@ -1,5 +1,6 @@
 import { Github, Instagram, Mail, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
+import { AppRoutes } from "../enums/routes";
 
 const Footer = () => {
   return (
@@ -38,12 +39,12 @@ const Footer = () => {
             <h4 className='text-lg font-semibold mb-4'>Quick Links</h4>
             <ul className='space-y-2'>
               <li>
-                <Link to='/' className='text-gray-400 hover:text-white transition-colors'>
+                <Link to={AppRoutes.HOME} className='text-gray-400 hover:text-white transition-colors'>
                   Home
                 </Link>
               </li>
               <li>
-                <Link to='/analyze' className='text-gray-400 hover:text-white transition-colors'>
+                <Link to={AppRoutes.ANALYZE} className='text-gray-400 hover:text-white transition-colors'>
                   Analyze Followers
                 </Link>
               </li>

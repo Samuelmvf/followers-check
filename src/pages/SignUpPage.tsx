@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import Header from "../components/Header";
+import { AppRoutes } from "../enums/routes";
 
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -117,11 +118,11 @@ const SignUpPage = () => {
                 <input type='checkbox' id='terms' className='rounded border-gray-300 text-purple-600 focus:ring-purple-500' required />
                 <label htmlFor='terms' className='ml-2 text-sm text-gray-600'>
                   I agree to the{" "}
-                  <Link to='/terms' className='text-purple-600 hover:text-purple-500 transition-colors'>
+                  <Link to={AppRoutes.TERMS} className='text-purple-600 hover:text-purple-500 transition-colors'>
                     Terms of Service
                   </Link>{" "}
                   and{" "}
-                  <Link to='/privacy' className='text-purple-600 hover:text-purple-500 transition-colors'>
+                  <Link to={AppRoutes.PRIVACY} className='text-purple-600 hover:text-purple-500 transition-colors'>
                     Privacy Policy
                   </Link>
                 </label>
@@ -166,7 +167,7 @@ const SignUpPage = () => {
             <div className='mt-8 text-center'>
               <p className='text-gray-600'>
                 Already have an account?{" "}
-                <Link to='/signin' className='text-purple-600 hover:text-purple-500 font-medium transition-colors'>
+                <Link to={AppRoutes.SIGNIN} className='text-purple-600 hover:text-purple-500 font-medium transition-colors'>
                   Sign in here
                 </Link>
               </p>

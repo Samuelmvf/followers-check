@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { AppRoutes } from "../enums/routes";
 
 interface AuthLayoutProps {
   children: React.ReactNode;
@@ -10,7 +11,7 @@ const AuthLayout = ({ children }: AuthLayoutProps) => {
       {/* Mini header with logo */}
       <div className='py-6'>
         <div className='max-w-md mx-auto px-4'>
-          <Link to='/' className='flex items-center justify-center space-x-2'>
+          <Link to={AppRoutes.HOME} className='flex items-center justify-center space-x-2'>
             <div className='w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center'>
               <span className='text-white font-bold text-sm'>F</span>
             </div>

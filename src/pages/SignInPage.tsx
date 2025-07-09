@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import Header from "../components/Header";
+import { AppRoutes } from "../enums/routes";
 
 const SignInPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -76,7 +77,7 @@ const SignInPage = () => {
                   <input type='checkbox' className='rounded border-gray-300 text-purple-600 focus:ring-purple-500' />
                   <span className='ml-2 text-sm text-gray-600'>Remember me</span>
                 </label>
-                <Link to='/forgot-password' className='text-sm text-purple-600 hover:text-purple-500 transition-colors'>
+                <Link to={AppRoutes.FORGOT_PASSWORD} className='text-sm text-purple-600 hover:text-purple-500 transition-colors'>
                   Forgot password?
                 </Link>
               </div>
@@ -120,7 +121,7 @@ const SignInPage = () => {
             <div className='mt-8 text-center'>
               <p className='text-gray-600'>
                 Don't have an account?{" "}
-                <Link to='/signup' className='text-purple-600 hover:text-purple-500 font-medium transition-colors'>
+                <Link to={AppRoutes.SIGN_UP} className='text-purple-600 hover:text-purple-500 font-medium transition-colors'>
                   Sign up here
                 </Link>
               </p>
