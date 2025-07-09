@@ -1,6 +1,6 @@
 import { type ButtonHTMLAttributes, type ReactNode } from "react";
 
-export type ButtonVariant = "primary" | "secondary" | "confirm" | "warning" | "error";
+export type ButtonVariant = "primary" | "secondary" | "confirm" | "warning" | "error" | "transparent";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
@@ -66,6 +66,19 @@ const Button = ({ variant = "primary", children, isLoading = false, className = 
           boxShadow: "0 4px 14px 0 rgba(239, 68, 68, 0.3)",
         };
 
+      case "transparent":
+        return {
+          ...baseStyles,
+          background: "transparent",
+          backgroundImage: "linear-gradient(to right, #8b5cf6, #ec4899)",
+          backgroundClip: "text",
+          WebkitBackgroundClip: "text",
+          color: "transparent",
+          border: "2px solid transparent",
+          backgroundOrigin: "border-box",
+          boxShadow: "none",
+        };
+
       default:
         return baseStyles;
     }
@@ -85,6 +98,11 @@ const Button = ({ variant = "primary", children, isLoading = false, className = 
         return { background: "linear-gradient(to right, #d97706, #b45309)" };
       case "error":
         return { background: "linear-gradient(to right, #dc2626, #b91c1c)" };
+      case "transparent":
+        return {
+          backgroundImage: "linear-gradient(to right, #7c3aed, #db2777)",
+          backgroundColor: "rgba(139, 92, 246, 0.1)",
+        };
       default:
         return {};
     }
@@ -103,6 +121,7 @@ const Button = ({ variant = "primary", children, isLoading = false, className = 
     ${variant === "confirm" ? "focus:ring-green-300" : ""}
     ${variant === "warning" ? "focus:ring-yellow-300" : ""}
     ${variant === "error" ? "focus:ring-red-300" : ""}
+    ${variant === "transparent" ? "focus:ring-purple-300" : ""}
     ${disabled || isLoading ? "transform-none" : ""}
     ${className}
   `

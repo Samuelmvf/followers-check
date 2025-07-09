@@ -43,7 +43,7 @@ const HeroSection = () => {
                 Start Free Analysis
                 <ArrowRight className='w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform' aria-hidden='true' />
               </Link>
-              <Button variant='secondary' className='text-lg px-8 py-4' aria-label='Watch tool demonstration'>
+              <Button variant='transparent' className='text-lg px-8 py-4' aria-label='Watch tool demonstration'>
                 Watch Demo
               </Button>
             </div>

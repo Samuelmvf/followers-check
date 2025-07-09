@@ -19,47 +19,6 @@ const Header = () => {
             </Link>
           </div>
 
-          <nav className='hidden md:flex items-center space-x-8' role='navigation' aria-label='Main navigation'>
-            <ul className='flex items-center space-x-8 list-none m-0 p-0'>
-              <li>
-                <Link
-                  to='/analyze'
-                  className='text-gray-600 hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-md px-2 py-1'
-                  aria-label='Go to follower analysis'
-                >
-                  Analyze
-                </Link>
-              </li>
-              <li>
-                <a
-                  href='#features'
-                  className='text-gray-600 hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-md px-2 py-1'
-                  aria-label='Go to features section'
-                >
-                  Features
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#pricing'
-                  className='text-gray-600 hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-md px-2 py-1'
-                  aria-label='Go to pricing section'
-                >
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a
-                  href='#contact'
-                  className='text-gray-600 hover:text-gray-900 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-md px-2 py-1'
-                  aria-label='Go to contact section'
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </nav>
-
           <div className='flex items-center space-x-4'>
             <Link
               to='/sign-in'

@@ -1,5 +1,6 @@
-import { HelpCircle, UserCheck, Users, UserX } from "lucide-react";
+import { HelpCircle } from "lucide-react";
 import { useState } from "react";
+import Button from "../../components/Button";
 import FileUpload from "../../components/FileUpload";
 import Header from "../../components/Header";
 import HelpModal from "./components/modals/HelpModal";
@@ -23,17 +24,17 @@ const Analysis = () => {
   const handleFilesUploaded = (files: FileList) => {
     setIsAnalyzing(true);
 
-    // Simular análise dos arquivos
+    // Simulate file analysis
     setTimeout(() => {
       const mockResults: AnalysisResults = {
         totalFollowers: 1234,
         totalFollowing: 567,
         notFollowingBack: [
-          { username: "@usuario_antigo", followingSince: "2 anos" },
-          { username: "@perfil_distante", followingSince: "1 ano" },
-          { username: "@sem_reciprocidade", followingSince: "8 meses" },
-          { username: "@conta_inativa", followingSince: "6 meses" },
-          { username: "@follow_perdido", followingSince: "4 meses" },
+          { username: "@old_user", followingSince: "2 years" },
+          { username: "@distant_profile", followingSince: "1 year" },
+          { username: "@no_reciprocity", followingSince: "8 months" },
+          { username: "@inactive_account", followingSince: "6 months" },
+          { username: "@lost_follow", followingSince: "4 months" },
         ],
       };
       setResults(mockResults);
@@ -48,65 +49,60 @@ const Analysis = () => {
       <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
         <div className='text-center mb-12'>
           <h1 className='text-4xl font-bold text-gray-900 mb-4'>
-            Análise de <span className='bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent'>Seguidores</span>
+            Follower <span className='bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent'>Analysis</span>
           </h1>
-          <p className='text-xl text-gray-600 max-w-2xl mx-auto'>
-            Faça upload dos seus dados do Instagram para descobrir quem não te segue de volta
-          </p>
+          <p className='text-xl text-gray-600 max-w-2xl mx-auto'>Upload your Instagram data to discover who doesn't follow you back</p>
         </div>
 
         <div className='bg-white rounded-3xl shadow-2xl p-8 border border-gray-100 mb-8'>
           <div className='flex items-center justify-between mb-6'>
-            <h2 className='text-2xl font-semibold text-gray-900'>Upload dos Dados</h2>
-            <button
-              onClick={() => setShowHelpModal(true)}
-              className='flex items-center space-x-2 text-purple-600 hover:text-purple-700 transition-colors'
-            >
+            <h2 className='text-2xl font-semibold text-gray-900'>Data Upload</h2>
+            <Button variant='transparent' onClick={() => setShowHelpModal(true)} className='flex items-center space-x-2 text-sm'>
               <HelpCircle className='w-5 h-5' />
-              <span className='text-sm font-medium'>Como obter os dados?</span>
-            </button>
+              <span className='font-medium'>How to get the data?</span>
+            </Button>
           </div>
 
           <div className='mb-8'>
-            <p className='text-gray-600 mb-4'>Faça upload dos arquivos JSON exportados do Instagram: "seguidores" e "seguindo"</p>
+            <p className='text-gray-600 mb-4'>Upload the JSON files exported from Instagram: "followers" and "following"</p>
             <FileUpload onFilesUploaded={handleFilesUploaded} isAnalyzing={isAnalyzing} />
           </div>
         </div>
 
-        {/* Seção de Resultados */}
-        {results && (
+        {/* Results Section */}
+        {results && !isAnalyzing && (
           <div className='bg-white rounded-3xl shadow-2xl p-8 border border-gray-100'>
-            <h2 className='text-2xl font-semibold text-gray-900 mb-6'>Resultados da Análise</h2>
+            <div className='text-center mb-8'>
+              <h2 className='text-2xl font-semibold text-gray-900 mb-4'>Analysis Complete!</h2>
+              <p className='text-gray-600'>We found {results.notFollowingBack.length} people who don't follow you back</p>
+            </div>
 
-            <div className='grid md:grid-cols-3 gap-6 mb-8'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-8'>
               <div className='bg-blue-50 p-6 rounded-xl text-center'>
-                <Users className='w-8 h-8 text-blue-600 mx-auto mb-3' />
-                <div className='text-3xl font-bold text-blue-900 mb-1'>{results.totalFollowers}</div>
-                <div className='text-sm text-blue-600'>Total de Seguidores</div>
+                <div className='text-3xl font-bold text-blue-900 mb-2'>{results.totalFollowers.toLocaleString()}</div>
+                <div className='text-blue-600'>Total Followers</div>
               </div>
-
               <div className='bg-green-50 p-6 rounded-xl text-center'>
-                <UserCheck className='w-8 h-8 text-green-600 mx-auto mb-3' />
-                <div className='text-3xl font-bold text-green-900 mb-1'>{results.totalFollowing}</div>
-                <div className='text-sm text-green-600'>Total Seguindo</div>
+                <div className='text-3xl font-bold text-green-900 mb-2'>{results.totalFollowing.toLocaleString()}</div>
+                <div className='text-green-600'>Following</div>
               </div>
+              <div className='bg-red-50 p-6 rounded-xl text-center'>
+                <div className='text-3xl font-bold text-red-900 mb-2'>{results.notFollowingBack.length}</div>
+                <div className='text-red-600'>Don't Follow Back</div>
+              </div>
+            </div>
 
-              <div
-                className='bg-red-50 p-6 rounded-xl text-center cursor-pointer hover:bg-red-100 transition-colors'
-                onClick={() => setShowResultsModal(true)}
-              >
-                <UserX className='w-8 h-8 text-red-600 mx-auto mb-3' />
-                <div className='text-3xl font-bold text-red-900 mb-1'>{results.notFollowingBack.length}</div>
-                <div className='text-sm text-red-600'>Não seguem de volta</div>
-                <div className='text-xs text-red-500 mt-2'>Clique para ver detalhes</div>
-              </div>
+            <div className='text-center'>
+              <Button variant='primary' onClick={() => setShowResultsModal(true)} className='text-lg px-8 py-3'>
+                View Complete Results
+              </Button>
             </div>
           </div>
         )}
       </div>
 
       <HelpModal isOpen={showHelpModal} onClose={() => setShowHelpModal(false)} />
-      <ResultsModal isOpen={showResultsModal} onClose={() => setShowResultsModal(false)} data={results?.notFollowingBack || []} />
+      {results && <ResultsModal isOpen={showResultsModal} onClose={() => setShowResultsModal(false)} data={results.notFollowingBack} />}
     </div>
   );
 };
