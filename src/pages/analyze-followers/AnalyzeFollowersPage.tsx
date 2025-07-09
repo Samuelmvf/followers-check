@@ -15,7 +15,7 @@ interface AnalysisResults {
   }>;
 }
 
-const Analysis = () => {
+const AnalyzeFollowersPage = () => {
   const [showHelpModal, setShowHelpModal] = useState(false);
   const [showResultsModal, setShowResultsModal] = useState(false);
   const [results, setResults] = useState<AnalysisResults | null>(null);
@@ -107,4 +107,4 @@ const Analysis = () => {
   );
 };
 
-export default Analysis;
+export default AnalyzeFollowersPage;
