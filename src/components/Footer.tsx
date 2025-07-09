@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className='bg-gray-900 text-white'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
         <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
-          {/* Logo e Descrição */}
+          {/* Logo and Description */}
           <div className='col-span-1 md:col-span-2'>
             <div className='flex items-center space-x-2 mb-4'>
               <div className='w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center'>
@@ -15,8 +15,7 @@ const Footer = () => {
               <h3 className='text-xl font-bold'>Followers Check</h3>
             </div>
             <p className='text-gray-400 mb-4 max-w-md'>
-              A ferramenta mais completa para análise de seguidores do Instagram. Descubra quem realmente te segue e otimize seu
-              crescimento.
+              The most complete tool for Instagram follower analysis. Discover who really follows you and optimize your growth.
             </p>
             <div className='flex space-x-4'>
               <a href='#' className='text-gray-400 hover:text-white transition-colors'>
@@ -34,9 +33,9 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Links Rápidos */}
+          {/* Quick Links */}
           <div>
-            <h4 className='text-lg font-semibold mb-4'>Links Rápidos</h4>
+            <h4 className='text-lg font-semibold mb-4'>Quick Links</h4>
             <ul className='space-y-2'>
               <li>
                 <Link to='/' className='text-gray-400 hover:text-white transition-colors'>
@@ -45,44 +44,44 @@ const Footer = () => {
               </li>
               <li>
                 <Link to='/analyze' className='text-gray-400 hover:text-white transition-colors'>
-                  Analisar Seguidores
+                  Analyze Followers
                 </Link>
               </li>
               <li>
                 <a href='#features' className='text-gray-400 hover:text-white transition-colors'>
-                  Recursos
+                  Features
                 </a>
               </li>
               <li>
                 <a href='#pricing' className='text-gray-400 hover:text-white transition-colors'>
-                  Preços
+                  Pricing
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Suporte */}
+          {/* Support */}
           <div>
-            <h4 className='text-lg font-semibold mb-4'>Suporte</h4>
+            <h4 className='text-lg font-semibold mb-4'>Support</h4>
             <ul className='space-y-2'>
               <li>
                 <a href='#' className='text-gray-400 hover:text-white transition-colors'>
-                  Central de Ajuda
+                  Help Center
                 </a>
               </li>
               <li>
                 <a href='#' className='text-gray-400 hover:text-white transition-colors'>
-                  Contato
+                  Contact
                 </a>
               </li>
               <li>
                 <a href='#' className='text-gray-400 hover:text-white transition-colors'>
-                  Política de Privacidade
+                  Privacy Policy
                 </a>
               </li>
               <li>
                 <a href='#' className='text-gray-400 hover:text-white transition-colors'>
-                  Termos de Uso
+                  Terms of Service
                 </a>
               </li>
             </ul>
@@ -90,7 +89,7 @@ const Footer = () => {
         </div>
 
         <div className='border-t border-gray-800 mt-8 pt-8 text-center'>
-          <p className='text-gray-400'>© 2024 Followers Check. Todos os direitos reservados.</p>
+          <p className='text-gray-400'>© 2024 Followers Check. All rights reserved.</p>
         </div>
       </div>
     </footer>

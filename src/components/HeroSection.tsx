@@ -12,72 +12,72 @@ const HeroSection = () => {
       </div>
 
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 relative z-10'>
-        <div className='grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
           {/* Left Column - Content */}
           <div className='space-y-8' aria-labelledby='hero-heading'>
             <div className='inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full' role='banner'>
               <Instagram className='w-4 h-4 text-purple-600 mr-2' aria-hidden='true' />
-              <span className='text-sm font-medium text-purple-800'>Ferramenta Oficial para Instagram</span>
+              <span className='text-sm font-medium text-purple-800'>Official Instagram Tool</span>
             </div>
 
             <div className='space-y-6'>
               <h2 id='hero-heading' className='text-5xl lg:text-6xl font-bold text-gray-900 leading-tight'>
                 <span className='bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent'>Followers Check</span>
                 <br />
-                <span className='text-gray-900'>Controle Total dos Seus Seguidores</span>
+                <span className='text-gray-900'>Complete Control Over Your Followers</span>
               </h2>
 
               <p className='text-xl text-gray-600 leading-relaxed max-w-lg'>
-                Descubra quem realmente te segue no Instagram. Nossa ferramenta permite verificar seguidores, identificar perfis inativos e
-                otimizar seu crescimento de forma inteligente.
+                Discover who really follows you on Instagram. Our tool allows you to check followers, identify inactive profiles and
+                optimize your growth intelligently.
               </p>
             </div>
 
-            <div className='flex flex-col sm:flex-row gap-4' role='group' aria-label='Ações principais'>
+            <div className='flex flex-col sm:flex-row gap-4'>
               <Link
                 to='/analyze'
                 className='bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2'
-                aria-label='Começar análise gratuita dos seguidores'
+                aria-label='Start free follower analysis'
               >
-                Começar Análise Grátis
+                Start Free Analysis
                 <ArrowRight className='w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform' aria-hidden='true' />
               </Link>
               <button
                 className='border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full text-lg font-semibold hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2'
-                aria-label='Assistir demonstração da ferramenta'
+                aria-label='Watch tool demonstration'
               >
-                Ver Demonstração
+                Watch Demo
               </button>
             </div>
 
             {/* Trust indicators */}
-            <div className='flex items-center space-x-6 pt-6' role='list' aria-label='Indicadores de confiança'>
-              <div className='flex items-center space-x-2' role='listitem'>
-                <CheckCircle className='w-5 h-5 text-green-500' aria-hidden='true' />
-                <span className='text-sm text-gray-600'>100% Seguro</span>
+            <div className='flex items-center space-x-6 text-sm text-gray-500'>
+              <div className='flex items-center space-x-2'>
+                <CheckCircle className='w-4 h-4 text-green-500' aria-hidden='true' />
+                <span>100% Safe</span>
               </div>
-              <div className='flex items-center space-x-2' role='listitem'>
-                <Shield className='w-5 h-5 text-blue-500' aria-hidden='true' />
-                <span className='text-sm text-gray-600'>Privacidade Garantida</span>
+              <div className='flex items-center space-x-2'>
+                <Shield className='w-4 h-4 text-blue-500' aria-hidden='true' />
+                <span>Privacy Protected</span>
               </div>
-              <div className='flex items-center space-x-2' role='listitem'>
-                <Zap className='w-5 h-5 text-yellow-500' aria-hidden='true' />
-                <span className='text-sm text-gray-600'>Resultados Instantâneos</span>
+              <div className='flex items-center space-x-2'>
+                <Zap className='w-4 h-4 text-yellow-500' aria-hidden='true' />
+                <span>Instant Results</span>
               </div>
             </div>
           </div>
 
-          {/* Right Column - Visual */}
+          {/* Right Column - Demo Interface */}
           <div className='relative' aria-labelledby='demo-heading'>
             <div className='relative z-10 bg-white rounded-3xl shadow-2xl p-8 border border-gray-100'>
               <div className='space-y-6'>
                 <div className='flex items-center justify-between'>
                   <h3 id='demo-heading' className='text-lg font-semibold text-gray-900'>
-                    Análise de Seguidores
+                    Follower Analysis
                   </h3>
-                  <div className='flex items-center space-x-2' aria-label='Tipo de upload'>
+                  <div className='flex items-center space-x-2' aria-label='Upload type'>
                     <Upload className='w-4 h-4 text-green-500' aria-hidden='true' />
-                    <span className='text-sm text-gray-500'>Upload JSON</span>
+                    <span className='text-sm text-gray-500'>JSON Upload</span>
                   </div>
                 </div>
 
@@ -85,102 +85,86 @@ const HeroSection = () => {
                   <div className='flex items-center space-x-3 mb-3'>
                     <Users className='w-6 h-6 text-red-600' aria-hidden='true' />
                     <h4 id='unfollowers-heading' className='text-lg font-semibold text-red-800'>
-                      Não te seguem de volta
+                      Don't follow you back
                     </h4>
                   </div>
-                  <div className='text-3xl font-bold text-red-900 mb-2' aria-label='247 pessoas não seguem de volta'>
+                  <div className='text-3xl font-bold text-red-900 mb-2' aria-label='247 people do not follow back'>
                     247
                   </div>
-                  <div className='text-sm text-red-600'>65% dos seus seguidores</div>
+                  <div className='text-sm text-red-600'>65% of your followers</div>
+                </div>
+
+                <div className='grid grid-cols-2 gap-4'>
+                  <div className='bg-blue-50 p-4 rounded-lg text-center'>
+                    <div className='text-2xl font-bold text-blue-900'>1.2K</div>
+                    <div className='text-sm text-blue-600'>Followers</div>
+                  </div>
+                  <div className='bg-green-50 p-4 rounded-lg text-center'>
+                    <div className='text-2xl font-bold text-green-900'>890</div>
+                    <div className='text-sm text-green-600'>Following</div>
+                  </div>
                 </div>
 
                 <div className='space-y-3'>
-                  <h4 className='text-sm font-medium text-gray-700 mb-3'>Top 3 que não seguem há mais tempo:</h4>
-
-                  <ul className='space-y-3' role='list' aria-label='Lista de usuários que não seguem de volta'>
-                    <li className='flex items-center justify-between p-3 bg-red-50 rounded-lg border-l-4 border-red-400' role='listitem'>
-                      <div className='flex items-center space-x-3'>
-                        <div className='w-8 h-8 bg-gradient-to-r from-red-400 to-red-600 rounded-full' aria-hidden='true'></div>
-                        <div>
-                          <div className='text-sm font-medium text-gray-900'>@usuario_antigo</div>
-                          <div className='text-xs text-red-600'>Seguindo há 2 anos</div>
-                        </div>
-                      </div>
-                      <div className='text-xs text-gray-500' aria-label='Status: não segue de volta'>
-                        Não segue
-                      </div>
-                    </li>
-
-                    <li className='flex items-center justify-between p-3 bg-red-50 rounded-lg border-l-4 border-red-400' role='listitem'>
-                      <div className='flex items-center space-x-3'>
-                        <div className='w-8 h-8 bg-gradient-to-r from-orange-400 to-red-500 rounded-full' aria-hidden='true'></div>
-                        <div>
-                          <div className='text-sm font-medium text-gray-900'>@perfil_distante</div>
-                          <div className='text-xs text-red-600'>Seguindo há 1 ano</div>
-                        </div>
-                      </div>
-                      <div className='text-xs text-gray-500' aria-label='Status: não segue de volta'>
-                        Não segue
-                      </div>
-                    </li>
-
-                    <li className='flex items-center justify-between p-3 bg-red-50 rounded-lg border-l-4 border-red-400' role='listitem'>
-                      <div className='flex items-center space-x-3'>
-                        <div className='w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full' aria-hidden='true'></div>
-                        <div>
-                          <div className='text-sm font-medium text-gray-900'>@sem_reciprocidade</div>
-                          <div className='text-xs text-red-600'>Seguindo há 8 meses</div>
-                        </div>
-                      </div>
-                      <div className='text-xs text-gray-500' aria-label='Status: não segue de volta'>
-                        Não segue
-                      </div>
-                    </li>
-                  </ul>
+                  <div className='flex items-center justify-between p-3 bg-gray-50 rounded-lg'>
+                    <div className='flex items-center space-x-3'>
+                      <div className='w-8 h-8 bg-red-500 rounded-full'></div>
+                      <span className='text-sm font-medium'>@inactive_user</span>
+                    </div>
+                    <span className='text-xs text-gray-500'>2 years ago</span>
+                  </div>
+                  <div className='flex items-center justify-between p-3 bg-gray-50 rounded-lg'>
+                    <div className='flex items-center space-x-3'>
+                      <div className='w-8 h-8 bg-purple-500 rounded-full'></div>
+                      <span className='text-sm font-medium'>@old_follow</span>
+                    </div>
+                    <span className='text-xs text-gray-500'>1 year ago</span>
+                  </div>
+                  <div className='flex items-center justify-between p-3 bg-gray-50 rounded-lg'>
+                    <div className='flex items-center space-x-3'>
+                      <div className='w-8 h-8 bg-blue-500 rounded-full'></div>
+                      <span className='text-sm font-medium'>@distant_profile</span>
+                    </div>
+                    <span className='text-xs text-gray-500'>8 months ago</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Floating elements */}
-            <div
-              className='absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full opacity-80 animate-bounce'
-              aria-hidden='true'
-            ></div>
-            <div
-              className='absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-60 animate-pulse'
-              aria-hidden='true'
-            ></div>
+            <div className='absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-20 animate-pulse'></div>
+            <div className='absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20 animate-pulse'></div>
           </div>
         </div>
 
-        {/* Stats Section */}
+        {/* Stats section */}
         <div className='mt-20' aria-labelledby='stats-heading'>
           <h3 id='stats-heading' className='sr-only'>
-            Estatísticas da plataforma
+            Platform statistics
           </h3>
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
             <div className='text-center' role='region' aria-labelledby='users-stat'>
-              <div className='text-4xl font-bold text-gray-900 mb-2' aria-label='50 mil usuários satisfeitos'>
+              <div className='text-4xl font-bold text-gray-900 mb-2' aria-label='50 thousand satisfied users'>
                 50K+
               </div>
               <div id='users-stat' className='text-gray-600'>
-                Usuários Satisfeitos
+                Satisfied Users
               </div>
             </div>
             <div className='text-center' role='region' aria-labelledby='analyses-stat'>
-              <div className='text-4xl font-bold text-gray-900 mb-2' aria-label='1 milhão de análises realizadas'>
+              <div className='text-4xl font-bold text-gray-900 mb-2' aria-label='1 million analyses performed'>
                 1M+
               </div>
               <div id='analyses-stat' className='text-gray-600'>
-                Análises Realizadas
+                Analyses Performed
               </div>
             </div>
             <div className='text-center' role='region' aria-labelledby='accuracy-stat'>
-              <div className='text-4xl font-bold text-gray-900 mb-2' aria-label='99.9% de precisão dos dados'>
+              <div className='text-4xl font-bold text-gray-900 mb-2' aria-label='99.9% data accuracy'>
                 99.9%
               </div>
               <div id='accuracy-stat' className='text-gray-600'>
-                Precisão dos Dados
+                Data Accuracy
               </div>
             </div>
           </div>

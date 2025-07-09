@@ -7,18 +7,18 @@ const SignUpPage = () => {
       <div className='max-w-md w-full bg-white rounded-lg shadow-md p-8'>
         <div className='text-center'>
           <h1 className='text-3xl font-bold text-gray-900 mb-2'>Sign Up</h1>
-          <p className='text-gray-600 mb-8'>Crie sua conta</p>
+          <p className='text-gray-600 mb-8'>Create your account</p>
 
           <div className='space-y-4'>
             <div className='text-left'>
               <label htmlFor='name' className='block text-sm font-medium text-gray-700 mb-2'>
-                Nome
+                Name
               </label>
               <input
                 type='text'
                 id='name'
                 className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500'
-                placeholder='Seu nome'
+                placeholder='Your name'
               />
             </div>
 
@@ -30,13 +30,13 @@ const SignUpPage = () => {
                 type='email'
                 id='email'
                 className='w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500'
-                placeholder='seu@email.com'
+                placeholder='your@email.com'
               />
             </div>
 
             <div className='text-left'>
               <label htmlFor='password' className='block text-sm font-medium text-gray-700 mb-2'>
-                Senha
+                Password
               </label>
               <input
                 type='password'
@@ -48,7 +48,7 @@ const SignUpPage = () => {
 
             <div className='text-left'>
               <label htmlFor='confirmPassword' className='block text-sm font-medium text-gray-700 mb-2'>
-                Confirmar Senha
+                Confirm Password
               </label>
               <input
                 type='password'
@@ -59,14 +59,14 @@ const SignUpPage = () => {
             </div>
 
             <button className='w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-md hover:from-purple-600 hover:to-pink-600 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500'>
-              Criar Conta
+              Create Account
             </button>
           </div>
 
           <p className='text-sm text-gray-600 mt-4'>
-            Já tem uma conta?{" "}
+            Already have an account?{" "}
             <Link to='/sign-in' className='text-purple-600 hover:text-purple-700'>
-              Faça login
+              Sign in
             </Link>
           </p>
         </div>

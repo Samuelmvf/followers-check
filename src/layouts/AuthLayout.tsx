@@ -1,14 +1,13 @@
-import { type ReactNode } from "react";
 import { Link } from "react-router-dom";
 
 interface AuthLayoutProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 const AuthLayout = ({ children }: AuthLayoutProps) => {
   return (
     <div className='min-h-screen bg-gray-50 flex flex-col'>
-      {/* Mini header com logo */}
+      {/* Mini header with logo */}
       <div className='py-6'>
         <div className='max-w-md mx-auto px-4'>
           <Link to='/' className='flex items-center justify-center space-x-2'>
@@ -20,13 +19,13 @@ const AuthLayout = ({ children }: AuthLayoutProps) => {
         </div>
       </div>
 
-      {/* Conteúdo principal */}
+      {/* Main content */}
       <div className='flex-1 flex items-center justify-center'>{children}</div>
 
       {/* Mini footer */}
       <div className='py-6'>
         <div className='max-w-md mx-auto px-4 text-center'>
-          <p className='text-sm text-gray-500'>© 2024 Followers Check. Todos os direitos reservados.</p>
+          <p className='text-sm text-gray-500'>© 2024 Followers Check. All rights reserved.</p>
         </div>
       </div>
     </div>

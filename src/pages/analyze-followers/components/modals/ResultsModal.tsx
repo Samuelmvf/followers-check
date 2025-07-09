@@ -19,7 +19,7 @@ const ResultsModal = ({ isOpen, onClose, data }: ResultsModalProps) => {
           <div className='p-6'>
             <Dialog.Title className='text-2xl font-bold text-gray-900 mb-4 flex items-center'>
               <UserX className='w-6 h-6 text-red-600 mr-2' />
-              Usuários que não seguem de volta ({data.length})
+              Users who don't follow back ({data.length})
             </Dialog.Title>
 
             <div className='max-h-96 overflow-y-auto space-y-3'>
@@ -36,7 +36,7 @@ const ResultsModal = ({ isOpen, onClose, data }: ResultsModalProps) => {
                       <div className='font-medium text-gray-900'>{user.username}</div>
                       <div className='flex items-center text-sm text-red-600'>
                         <Calendar className='w-3 h-3 mr-1' />
-                        Seguindo há {user.followingSince}
+                        Following for {user.followingSince}
                       </div>
                     </div>
                   </div>
@@ -52,7 +52,7 @@ const ResultsModal = ({ isOpen, onClose, data }: ResultsModalProps) => {
 
             <div className='mt-6 p-4 bg-yellow-50 rounded-lg'>
               <p className='text-sm text-yellow-800'>
-                <strong>Dica:</strong> Considere deixar de seguir usuários que você segue há muito tempo e que não retribuem o follow.
+                <strong>Tip:</strong> Consider unfollowing users you've been following for a long time who don't follow you back.
               </p>
             </div>
           </div>
