@@ -1,5 +1,6 @@
 import { Menu } from "lucide-react";
 import { Link } from "react-router-dom";
+import Button from "./Button";
 
 const Header = () => {
   return (
@@ -74,14 +75,15 @@ const Header = () => {
             >
               Get Started Free
             </Link>
-            <button
-              className='md:hidden p-2 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 rounded-md'
+            <Button
+              variant='secondary'
+              className='md:hidden p-2'
               aria-label='Open navigation menu'
               aria-expanded='false'
               aria-controls='mobile-menu'
             >
               <Menu className='w-6 h-6 text-gray-600' aria-hidden='true' />
-            </button>
+            </Button>
           </div>
         </div>
       </div>

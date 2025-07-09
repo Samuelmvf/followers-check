@@ -1,5 +1,6 @@
 import { Dialog } from "@base-ui-components/react/dialog";
 import { Calendar, ExternalLink, UserX } from "lucide-react";
+import Button from "../../../../components/Button";
 
 interface ResultsModalProps {
   isOpen: boolean;
@@ -40,12 +41,13 @@ const ResultsModal = ({ isOpen, onClose, data }: ResultsModalProps) => {
                       </div>
                     </div>
                   </div>
-                  <button
-                    className='text-gray-400 hover:text-gray-600 transition-colors'
+                  <Button
+                    variant='secondary'
+                    className='p-2'
                     onClick={() => window.open(`https://instagram.com/${user.username.replace("@", "")}`, "_blank")}
                   >
                     <ExternalLink className='w-4 h-4' />
-                  </button>
+                  </Button>
                 </div>
               ))}
             </div>

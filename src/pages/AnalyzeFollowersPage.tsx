@@ -1,5 +1,6 @@
 import { HelpCircle } from "lucide-react";
 import { useState } from "react";
+import Button from "../components/Button";
 import FileUpload from "../components/FileUpload";
 import Header from "../components/Header";
 import HelpModal from "./analyze-followers/components/modals/HelpModal";
@@ -56,13 +57,10 @@ const Analysis = () => {
         <div className='bg-white rounded-3xl shadow-2xl p-8 border border-gray-100 mb-8'>
           <div className='flex items-center justify-between mb-6'>
             <h2 className='text-2xl font-semibold text-gray-900'>Data Upload</h2>
-            <button
-              onClick={() => setShowHelpModal(true)}
-              className='flex items-center space-x-2 text-purple-600 hover:text-purple-700 transition-colors'
-            >
+            <Button variant='secondary' onClick={() => setShowHelpModal(true)} className='flex items-center space-x-2 text-sm'>
               <HelpCircle className='w-5 h-5' />
-              <span className='text-sm font-medium'>How to get the data?</span>
-            </button>
+              <span className='font-medium'>How to get the data?</span>
+            </Button>
           </div>
 
           <div className='mb-8'>
@@ -95,12 +93,9 @@ const Analysis = () => {
             </div>
 
             <div className='text-center'>
-              <button
-                onClick={() => setShowResultsModal(true)}
-                className='bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105'
-              >
+              <Button variant='primary' onClick={() => setShowResultsModal(true)} className='text-lg px-8 py-3'>
                 View Complete Results
-              </button>
+              </Button>
             </div>
           </div>
         )}

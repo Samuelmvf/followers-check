@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle, Instagram, Shield, Upload, Users, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import Button from "./Button";
 
 const HeroSection = () => {
   return (
@@ -42,12 +43,9 @@ const HeroSection = () => {
                 Start Free Analysis
                 <ArrowRight className='w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform' aria-hidden='true' />
               </Link>
-              <button
-                className='border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full text-lg font-semibold hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2'
-                aria-label='Watch tool demonstration'
-              >
+              <Button variant='secondary' className='text-lg px-8 py-4' aria-label='Watch tool demonstration'>
                 Watch Demo
-              </button>
+              </Button>
             </div>
 
             {/* Trust indicators */}
