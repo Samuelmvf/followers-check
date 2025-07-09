@@ -1,7 +1,5 @@
-import { Menu } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { AppRoutes } from "../enums/routes";
-import Button from "./Button";
 
 const Header = () => {
   const { pathname } = useLocation();
@@ -22,7 +20,8 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className='flex items-center space-x-4'>
+          {/* TODO: Add sign in and sign up buttons */}
+          {/* <div className='flex items-center space-x-4'>
             {pathname !== AppRoutes.SIGN_IN && (
               <Link
                 to={AppRoutes.SIGN_IN}
@@ -51,7 +50,7 @@ const Header = () => {
             >
               <Menu className='w-6 h-6 text-gray-600' aria-hidden='true' />
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </header>

@@ -1,7 +1,6 @@
 import { ArrowRight, CheckCircle, Instagram, Shield, Users, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AppRoutes } from "../enums/routes";
-import Button from "./Button";
 import FollowerItem from "./FollowerItem";
 
 const HeroSection = () => {
@@ -18,40 +17,42 @@ const HeroSection = () => {
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center'>
           {/* Left Column - Content */}
           <div className='space-y-8' aria-labelledby='hero-heading'>
-            <div className='inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full' role='banner'>
-              <Instagram className='w-4 h-4 text-purple-600 mr-2' aria-hidden='true' />
-              <span className='text-sm font-medium text-purple-800'>Official Instagram Tool</span>
-            </div>
-
-            <div className='space-y-6'>
-              <h2 id='hero-heading' className='text-5xl lg:text-6xl font-bold text-gray-900 leading-tight'>
-                <span className='bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent'>Followers Check</span>
-                <br />
-                <span className='text-gray-900'>Complete Control Over Your Followers</span>
-              </h2>
-
-              <p className='text-xl text-gray-600 leading-relaxed max-w-lg'>
-                Discover who really follows you on Instagram. Our tool allows you to check followers, identify inactive profiles and
-                optimize your growth intelligently.
-              </p>
-            </div>
-
-            <div className='flex flex-col sm:flex-row gap-4'>
-              <Link
-                to={AppRoutes.ANALYZE}
-                className='bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2'
-                aria-label='Start free follower analysis'
+            <div className='flex flex-col items-center lg:items-start text-center lg:text-left space-y-8'>
+              <div
+                className='inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full justify-center'
+                role='banner'
               >
-                Start Free Analysis
-                <ArrowRight className='w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform' aria-hidden='true' />
-              </Link>
-              <Button variant='primary' flat className='text-lg px-8 py-4' aria-label='Watch tool demonstration'>
-                Watch Demo
-              </Button>
+                <Instagram className='w-4 h-4 text-purple-600 mr-2' aria-hidden='true' />
+                <span className='text-sm font-medium text-purple-800'>Instagram Tool</span>
+              </div>
+
+              <div className='space-y-6'>
+                <h2 id='hero-heading' className='text-5xl lg:text-6xl font-bold text-gray-900 leading-tight'>
+                  <span className='bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent'>Followers Check</span>
+                  <br />
+                  <span className='text-gray-900'>Complete Control Over Your Followers</span>
+                </h2>
+
+                <p className='text-xl text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0'>
+                  Discover who really follows you on Instagram. Our tool allows you to check followers, identify inactive profiles and
+                  optimize your growth intelligently.
+                </p>
+              </div>
+
+              <div className='flex flex-col sm:flex-row gap-4 w-full justify-center lg:justify-start'>
+                <Link
+                  to={AppRoutes.ANALYZE}
+                  className='bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center group focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2'
+                  aria-label='Start free follower analysis'
+                >
+                  Start Free Analysis
+                  <ArrowRight className='w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform' aria-hidden='true' />
+                </Link>
+              </div>
             </div>
 
             {/* Trust indicators */}
-            <div className='flex items-center space-x-6 text-sm text-gray-500'>
+            <div className='flex justify-center lg:justify-start items-center space-x-6 text-sm text-gray-500'>
               <div className='flex items-center space-x-2'>
                 <CheckCircle className='w-4 h-4 text-green-500' aria-hidden='true' />
                 <span>100% Safe</span>
@@ -102,7 +103,7 @@ const HeroSection = () => {
                   <div className='text-3xl font-bold text-yellow-900 mb-2' aria-label='247 people do not follow back'>
                     247
                   </div>
-                  <div className='text-sm text-yellow-600'>28% of your followers</div>
+                  <div className='text-sm text-yellow-600'>28% of the people you follow</div>
                 </div>
 
                 <div className='space-y-3'>
