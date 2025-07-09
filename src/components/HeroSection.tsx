@@ -143,7 +143,7 @@ const HeroSection = () => {
             </div>
             <div className='text-center' role='region' aria-labelledby='accuracy-stat'>
               <div className='text-4xl font-bold text-gray-900 mb-2' aria-label='99.9% data accuracy'>
-                99.9%
+                100%
               </div>
               <div id='accuracy-stat' className='text-gray-600'>
                 Data Accuracy
